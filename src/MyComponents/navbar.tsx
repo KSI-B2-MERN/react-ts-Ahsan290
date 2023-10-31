@@ -1,23 +1,36 @@
 
 
-    function navBar(){
+    function NavBar(){
         return(
         <>
-        <div className="bg-white h-16 w-screen flex justify-center  items-center">
-            <img className="pl-20" src="https://assets.dukan.pk/demo/dtemp/store-logo1683037149_47073426628770.jpeg" alt=""  width={130}/>
+            <div className="">
 
-            <p className="text-black pl-10 font-bold">Knowledge Stream</p>
+                <div className="bg-blue-500 h-20 w-screen flex">
+    
+                    <div className="flex align-center">
+                        <img className="p-5" src="https://assets.dukan.pk/demo/dtemp/store-logo1683037149_47073426628770.jpeg" alt=""  width={90}/>
+                    </div>
+    
+                    <div className="flex  items-center ">
+                        <p className="text-white  font-bold">Knowledge Stream</p>
+                        <p className="text-white  font-samibold pl-10 hover:font-bold">Visit Website</p>
+                    </div>
 
-            <div className="flex justify-end w-full">
-            <a href="" target="" rel="">
-            <button  className="bg-blue-500 text-white mr-2">Login</button></a>
-            </div>
+                    <div className="border-x flex  flex-col items-end">
+                        <p>User name</p>
+                        <p>Instructor</p>
 
-        </div>
+
+                        {/* <a href="" target="" rel="">
+                        </a> */}
+                        </div>
+
+                    </div>
 
         
+            </div>
         </>
         )
     }
 
-    export default navBar;
+    export default NavBar;

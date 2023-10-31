@@ -1,10 +1,31 @@
+// import NavBar from "../MyComponents/navbar";
 
-
-function signUP() {
+function Signup() {
   
     return (
       <>
 
+        <div className="bg-white h-20 w-screen flex">
+          <div className="flex align-center">
+            <img className="p-5" src="https://assets.dukan.pk/demo/dtemp/store-logo1683037149_47073426628770.jpeg" alt=""  width={90}/>
+          </div>
+          
+          <div className="flex  items-center ">
+            <p className="text-black  font-bold">Knowledge Stream</p>
+          </div>
+
+            {/* <div className="flex justify-end w-full">
+            <a href="" target="" rel="">
+            <button  className="bg-blue-500 text-white mr-2"
+           
+            >Signup</button></a>
+            </div> */}
+
+        </div>
+
+
+
+    {/* <NavBar/> */}
 <div className="h-screen w-screen text-black flex justify-center">
 
           
@@ -49,7 +70,7 @@ function signUP() {
  />
 
  </div>
-
+ <p className="text-xs">already account click here <a href="" > Login</a></p>
  <div className="mt-4">
    <button>Sign-Up</button>
  </div>
@@ -100,5 +121,5 @@ function signUP() {
     )
   }
   
-  export default signUP
+  export default Signup;
   

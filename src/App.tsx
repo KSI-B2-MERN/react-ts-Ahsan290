@@ -1,8 +1,12 @@
 // import style from '../src/index.css'
-import Navbar from "./MyComponents/navbar"
+
 import Login from "./Pages/log-in"
 import SignUP from "./Pages/signUp"
-import Dashboard from "./Pages/dashBoard"
+// import Dashboard from "./Pages/dashBoard";
+// import Logsign from "./Pages/logSign";
+import Home from "./HomePg";
+
+import {Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -10,17 +14,22 @@ function App() {
 
   return (
     <>
-      <div className="flex w-full h-full bg-white justify-center items-center flex-col">
+     
+      <div className="flex w-screen h-full bg-white justify-center items-center flex-col ">
+        
+       
+       
 
-        <Navbar></Navbar>
-        <Login></Login>
-        <SignUP></SignUP>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route path="/signup" element={<SignUP/>}/>
+          <Route path="/home" element={<Home/>}/>
+
+    </Routes>
+{/* <Logsign/> */}
+        
       </div>
 
-
-      <div className="bg-red-100 mt-5 flex w-screen h-screen  flex-col ">
-        <Dashboard></Dashboard>
-      </div>
     
     
    
