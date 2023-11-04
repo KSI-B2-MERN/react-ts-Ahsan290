@@ -1,21 +1,35 @@
-// import NavBar from "../MyComponents/navbar"
+import axios from "axios"
+import { useState } from "react";
+import select from "react-select";
+// import { useNavigate } from "react-router-dom";
 
-// import {usenavigate} from 'react-router-dom'
 
-// import {useState, userState} from "react";
 
-// function const Username: string
-//   const [Username, SetUsername] = useState<string>("");
 
-//   const onUsernameChange = (Username: string) =>{
-//     SetUsername(Username)
-//   };
 
-//     const onPasswordChange = (password: string) =>{
-//       console.log(password); 
-//      };
+  const onusernameChange = (Username: string) =>{
+    setusername(Username)
+  };
+
+    const onPasswordChange = (password: string) =>{
+      console.log(password); 
+     };
+
+     const login = async () => {
+      const loginRes = await axios.post("http://localhost:3000/auth/login",{
+        username: username,
+        password: password,
+      });
+      if (loginRes.data){
+        Navigate("/home");
+      } else {
+        alert("incorect username/password");
+      }
+     };
 
 function Login() {
+  const [username, SetUsername] = useState<string>("");
+  const [password, setpassword] = useState<string>("");
   
     return (
       <>
@@ -54,23 +68,23 @@ function Login() {
 
       <p className=" text-black">Provide your Valid login credentials</p>
 
-      <label className="mt-2" >Username</label>
+      <label className="mt-2" >username</label>
 
       <input className="rounded-md border-black border-2" type="text"
       required
-      // value={Username}
-      // onChange={(e) =>{
-      //   void onUsernameChange(e.target.value);
-      // }}
+      value={username}
+      onChange={(e) =>{
+        void onUsernameChange(e.target.value);
+      }}
       />
 
 
-      <label className="">Password</label>
+      <label className="">password</label>
       <input className="rounded-md border-black border-2" type="password" 
       required
-      // onChange={(e) =>{
-      //   void onPasswordChange(e.target.value);
-      // }}
+      onChange={(e) =>{
+        void onpasswordChange(e.target.value);
+      }}
       />
       </div>
           <p className="text-xs">If you new user firstly   <a href="" > Sign-Up</a></p>
@@ -85,5 +99,5 @@ function Login() {
     )
   }
   
-  export default Login
+  export default Login;
   

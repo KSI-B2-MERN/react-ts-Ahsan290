@@ -1,4 +1,5 @@
 import NavBar from "./MyComponents/navbar";
+import Sidebar from "./MyComponents/sidebar";
 
 
 function Home(){
@@ -7,9 +8,11 @@ function Home(){
             <>
             <div className="h-screen w-screen">
                 <NavBar/>
+                <div className="h-screen w-screen  pt-28 pl-8 pb-8 flex">
+                    <Sidebar/>
+                    <div className=""></div>
+                </div>
 
-                <div className="mt-3 h-3/4 w-1/5  bg-black "></div>
-                <div className="mt-3 h-3/4 w-1/5  bg-black "></div>
 
 
             </div>
