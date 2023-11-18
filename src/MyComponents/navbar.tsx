@@ -1,6 +1,27 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+type User = {
+  fName: string;
+  lName: string;
+  role: number;
+};
 
     function NavBar(){
+        const [user, setUser] = useState<User>();
+
+  const getUser = async () => {
+    const userData = await axios.get("http://localhost:3000/users/getUser", {
+      params: {
+        id: 4,
+      },
+    });
+
+    setUser(userData.data);
+  };
+  useEffect(() => {
+    void getUser();
+  }, []);
         return(
         <>
             <div className="">
